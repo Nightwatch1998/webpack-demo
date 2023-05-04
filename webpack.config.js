@@ -1,14 +1,33 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode:'development',//开发环境
-  entry: { //入口文件
-    index: './src/index.js',
+  mode:'development',
+  entry: {
+    app: './src/index.js',
+    print: './src/print.js',
   },
+  devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+    hot: true,
+  },
+  module:{
+    rules:[
+      {
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Hot Module Replacement',
+    }),
+  ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname,'dist'),
-    clean:true //每次构建清理dist目录旧文件
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
-}
+};

@@ -17,12 +17,14 @@
     "@babel/parser": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
     "@babel/traverse": "^7.21.4",
-    "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.1",
     "lodash": "^4.17.21",
-    "style-loader": "^3.3.2",
     "webpack": "^5.80.0",
     "webpack-cli": "^5.0.2",
     "webpack-dev-server": "^4.13.3"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.2"
   }
 }
